@@ -5,7 +5,7 @@ DEFAULT_ARG_DEFNITIONS=docker run -it --rm --env-file=.env -w /work -v $(shell p
 RUN_NODEJS_SHELL=$(DEFAULT_ARG_DEFNITIONS) --entrypoint=sh $(NODEJS_IMAGE)
 RUN_NODEJS=$(DEFAULT_ARG_DEFNITIONS) $(NODEJS_IMAGE)
 
-.PHONY: .env install start shell
+.PHONY: .env install build start shell
 
 env-%:
 	@ if [ "${${*}}" = "" ]; then \
@@ -18,6 +18,12 @@ env-%:
 
 install: .env
 	$(RUN_NODEJS) npm install
+
+build: .env
+	$(RUN_NODEJS) npm run build
+
+export: .env
+	$(RUN_NODEJS) npm run export
 
 start: .env
 	$(RUN_NODEJS) npm run start
