@@ -1,0 +1,24 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Blog</title>
+      <link>brunodasilvalenga.github.io/blog</link>
+      <description>Sharing my daily experiences.</description>
+      <language>en-us</language>
+      <managingEditor>brunodasilvalenga@gmail.com (Bruno da Silva Valenga)</managingEditor>
+      <webMaster>brunodasilvalenga@gmail.com (Bruno da Silva Valenga)</webMaster>
+      <lastBuildDate>Wed, 20 May 2020 00:00:00 GMT</lastBuildDate>
+      <atom:link href="brunodasilvalenga.github.io/tags/amplify/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>brunodasilvalenga.github.io/blog/using-multiple-buckets-aws-amplify</guid>
+    <title>Using Multiple Buckets AWS Amplify</title>
+    <link>brunodasilvalenga.github.io/blog/using-multiple-buckets-aws-amplify</link>
+    <description>From the Amplify documentation, we can consider that AWS Amplify is a development platform for building secure, scalable mobile and web…</description>
+    <pubDate>Wed, 20 May 2020 00:00:00 GMT</pubDate>
+    <author>brunodasilvalenga@gmail.com (Bruno da Silva Valenga)</author>
+    <category>amplify</category><category>s3-bucket</category><category>aws</category>
+  </item>
+
+    </channel>
+  </rss>
