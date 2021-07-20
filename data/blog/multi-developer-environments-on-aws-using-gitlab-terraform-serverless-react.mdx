@@ -6,7 +6,6 @@ draft: false
 summary: 'How you can deploy your applications and separate them by developer using Terraform and Gitlab CI.'
 ---
 
-
 # Multi developer environments on AWS using Gitlab + Terraform + Serverless + React
 
 Photo by tian kuan on Unsplash
@@ -29,16 +28,18 @@ Let’s look at some code. We’re using Terraform and a concept called workspac
 
 ### Frontend — Cloud Front + S3 Bucket
 
-<iframe src="https://medium.com/media/2bd7f0796357596e3d596f92daf0d489" frameborder=0></iframe>
+<iframe src="https://medium.com/media/2bd7f0796357596e3d596f92daf0d489"></iframe>
 
 ### Backend — API Gateway
 
-<iframe src="https://medium.com/media/caa9dc35c0fb4e6d10f90efe895dc6a1" frameborder=0></iframe>
+<iframe src="https://medium.com/media/caa9dc35c0fb4e6d10f90efe895dc6a1"></iframe>
 
 ### Variables
 
-<iframe src="https://medium.com/media/09d68c83d8fadde917c8eee89ac8e421" frameborder=0></iframe>
-> We’re using our **Terraform** modules to create most of the resources. All the code and tools that we’re using is **Open Source **so if you want to check this out, you will find all the terraform modules and tools that we’ve on this link: [https://modules.dnx.one/](https://modules.dnx.one/).
+<iframe src="https://medium.com/media/09d68c83d8fadde917c8eee89ac8e421"></iframe>> We’re using our
+**Terraform** modules to create most of the resources. All the code and tools that we’re using is
+**Open Source **so if you want to check this out, you will find all the terraform modules and tools
+that we’ve on this link: [https://modules.dnx.one/](https://modules.dnx.one/).
 
 Look’s nice but how we know each developer and deploy the code in the right workspace?
 
@@ -46,21 +47,21 @@ Gitlab provides us with many environment variables that we can use ([https://doc
 
 ### Gitlab CI
 
-<iframe src="https://medium.com/media/9c285dfaac71720bf50e99f5201b8144" frameborder=0></iframe>
+<iframe src="https://medium.com/media/9c285dfaac71720bf50e99f5201b8144"></iframe>
 
 In this case, we set the pipeline to run the stage developer just when we deploy a variable called DEVELOPER_ID. This variable is the **GITLAB_USER_ID **that we found before and you can grab this on your Gitlab’s profile account ([https://gitlab.com/profile](https://gitlab.com/profile)) and get the **User ID** field. Now that we have our developer’s user id, we can run our pipeline to create the user workspace using Terraform:
 
-![Run Pipeline — Gitlab CI](https://cdn-images-1.medium.com/max/2560/1*ul78U7dxq3zg7Nz9wROS7w.png)*Run Pipeline — Gitlab CI*
+![Run Pipeline — Gitlab CI](https://cdn-images-1.medium.com/max/2560/1*ul78U7dxq3zg7Nz9wROS7w.png)_Run Pipeline — Gitlab CI_
 
 The result will be:
 
-![Pipeline Running - Gitlab CI](https://cdn-images-1.medium.com/max/2752/1*bkmGgBrx2d3dcT2SmTjN3g.png)*Pipeline Running - Gitlab CI*
+![Pipeline Running - Gitlab CI](https://cdn-images-1.medium.com/max/2752/1*bkmGgBrx2d3dcT2SmTjN3g.png)_Pipeline Running - Gitlab CI_
 
 We can use the Gitlab CI to apply our code using terraform and creating the new developer just when we set the variable **USER_ID**.
 
 Now that we have our workspace deployed, let's move on and create our pipeline for our applications.
 
-<iframe src="https://medium.com/media/868d3177f737c470e41e1aba313bbba8" frameborder=0></iframe>
+<iframe src="https://medium.com/media/868d3177f737c470e41e1aba313bbba8"></iframe>
 
 As we’re creating the API Gateway by developer we want each developer to have their own subdomain so we will use an **API Gateway Custom Domain Name** to have an endpoint pointing to the right API Gateway:
 
@@ -70,7 +71,7 @@ We also will change a bit our Serverless pipeline to grab the **GITLAB_USER_ID *
 
 ![](https://cdn-images-1.medium.com/max/4232/1*pYbWbcDpvZ7Ezb6VvYMUQg.png)
 
-<iframe src="https://medium.com/media/a49a016aae5d36613f348c7ab04f5230" frameborder=0></iframe>
+<iframe src="https://medium.com/media/a49a016aae5d36613f348c7ab04f5230"></iframe>
 
 Now when the developer does a commit into Gitlab the pipeline will trigger and grab the code that he is developing and deploy into his workspace on AWS.
 
