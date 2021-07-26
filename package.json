@@ -9,7 +9,8 @@
     "serve": "next start",
     "export": "next export",
     "analyze": "cross-env ANALYZE=true next build",
-    "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts"
+    "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts",
+    "new-post": "node ./scripts/compose.js"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.3.2",
