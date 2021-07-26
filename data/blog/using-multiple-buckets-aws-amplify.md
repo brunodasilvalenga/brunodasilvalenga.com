@@ -3,7 +3,9 @@ title: Using Multiple Buckets AWS Amplify
 date: '2020-05-20'
 tags: ['amplify', 's3-bucket', 'aws']
 draft: false
-summary: 'From the Amplify documentation, we can consider that AWS Amplify is a development platform for building secure, scalable mobile and web…'
+summary: 'From the Amplify documentation, we can consider that AWS Amplify is a development platform for building secure, scalable mobile and web...'
+layout: PostLayout
+authors: ['default']
 ---
 
 

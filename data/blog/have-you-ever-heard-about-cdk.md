@@ -1,7 +1,7 @@
 ---
 title: Have you ever heard about CDK?
 date: '2021-07-26'
-tags: ['aws', 'cdk', 'ec2', 'alb', 'typescript', 'iac']
+tags: ['aws', 'cdk', 'ec2', 'alb', 'asg', 'typescript', 'iac']
 draft: false
 summary: AWS Cloud Development Kit (CDK) lets you define your cloud infrastructure as code in one of five supported languages. The CDK allows you to use your expertise in programming languages to create code infrastructure by provisioning resources using AWS CloudFormation. Let's build a superpower EC2 Construct.
 layout: PostLayout

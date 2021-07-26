@@ -4,6 +4,8 @@ date: '2020-05-06'
 tags: ['serverless', 'gitlab', 'terraform', 'react', 'aws']
 draft: true
 summary: 'How to install Python Libraries to run on Lambdas'
+layout: PostLayout
+authors: ['default']
 ---
 
 # How to install Python Libraries to run on Lambda's

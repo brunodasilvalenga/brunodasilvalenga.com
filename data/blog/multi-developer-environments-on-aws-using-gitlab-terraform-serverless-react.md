@@ -4,6 +4,8 @@ date: '2020-05-06'
 tags: ['serverless', 'gitlab', 'terraform', 'react', 'aws']
 draft: false
 summary: 'How you can deploy your applications and separate them by developer using Terraform and Gitlab CI.'
+layout: PostLayout
+authors: ['default']
 ---
 
 # Multi developer environments on AWS using Gitlab + Terraform + Serverless + React
