@@ -4,7 +4,6 @@ date: '2021-07-26'
 tags: ['aws', 'cdk', 'ec2', 'alb', 'typescript', 'iac']
 draft: false
 summary: AWS Cloud Development Kit (CDK) lets you define your cloud infrastructure as code in one of five supported languages. The CDK allows you to use your expertise in programming languages to create code infrastructure by provisioning resources using AWS CloudFormation. Let's build a superpower EC2 Construct.
-images: []
 layout: PostLayout
 authors: ['default']
 ---
@@ -111,7 +110,7 @@ Let's start creating our Construct, aka module, which we will use within our Sta
 
 First, let's create our Construct file `/lib/cdk-ec2-construct.ts`:
 
-```tsx
+```javascript
 export class CdkEc2Construct extends cdk.Construct {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props)
@@ -123,7 +122,7 @@ export class CdkEc2Construct extends cdk.Construct {
 
 Now, as we are using Typescript, we are going to write down our interface to our props.
 
-```tsx
+```javascript
 interface ICdkEc2Props {
   VpcId: string
   ImageName: string
@@ -139,7 +138,7 @@ interface ICdkEc2Props {
 
 Getting some real data from our Account.
 
-```tsx
+```javascript
 // Get VPC
 const vpc = ec2.Vpc.fromLookup(this, 'VPC', {
   vpcId: props.VpcId,
@@ -153,7 +152,7 @@ const ami = ec2.MachineImage.lookup({
 
 Creating the Load Balancer.
 
-```tsx
+```javascript
 // Create Load Balancer
 this.loadBalancer = new elbv2.ApplicationLoadBalancer(this, `ApplicationLoadBalancerPublic`, {
   vpc,
@@ -170,7 +169,7 @@ const httpsListener = this.loadBalancer.addListener('ALBListenerHttps', {
 
 Creating the Auto Scaling Group.
 
-```tsx
+```javascript
 // Creating ASG
 const autoScalingGroup = new autoscaling.AutoScalingGroup(this, 'AutoScalingGroup', {
   vpc, // VPC value that we got before.
@@ -184,7 +183,7 @@ const autoScalingGroup = new autoscaling.AutoScalingGroup(this, 'AutoScalingGrou
 
 Including scripts in the user data:
 
-```tsx
+```javascript
 // Instaling the SSM Agent on the Machine.
 autoScalingGroup.addUserData(
   'sudo yum install -y https://s3.region.amazonaws.com/amazon-ssm-region/latest/linux_amd64/amazon-ssm-agent.rpm'
@@ -197,7 +196,7 @@ autoScalingGroup.addUserData('echo "Hello Wolrd" > /var/www/html/index.html')
 
 Now that we have almost everything in place, we need to create the connection between our Load Balancer and our Auto Scaling group, and we can do that by adding a Target Group to our Load Balancer.
 
-```tsx
+```javascript
 // Adding ASG with target
 httpsListener.addTargets('TargetGroup', {
   port: props.InstancePort,
@@ -213,7 +212,7 @@ httpsListener.addTargets('TargetGroup', {
 
 Also, we will expose our Load Balancer as read-only, so we will be able to access it from our Stack.
 
-```tsx
+```javascript
 export class CdkEc2Construct extends cdk.Construct {
 	readonly loadBalancer: elbv2.ApplicationLoadBalancer
 
@@ -227,7 +226,7 @@ export class CdkEc2Construct extends cdk.Construct {
 
 Now, our construct should be look like this:
 
-```tsx
+```javascript
 import * as cdk from '@aws-cdk/core'
 import * as ec2 from '@aws-cdk/aws-ec2'
 import * as elbv2 from '@aws-cdk/aws-elasticloadbalancingv2'
@@ -314,7 +313,7 @@ export class CdkEc2Construct extends cdk.Construct {
 
 We have built our construct, let’s create our Stack, for that, we will edit the file: `/lib/cdk-ec2-construct-stack.ts`
 
-```tsx
+```javascript
 import * as cdk from '@aws-cdk/core'
 import * as route53 from '@aws-cdk/aws-route53';
 import * as route53Targets from '@aws-cdk/aws-route53-targets';
