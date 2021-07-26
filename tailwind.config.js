@@ -20,8 +20,7 @@ module.exports = {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.teal,
-        gray: colors.trueGray,
+        primary: colors.indigo,
         code: {
           green: '#b5f4a5',
           yellow: '#ffe484',
@@ -29,6 +28,10 @@ module.exports = {
           red: '#ff8383',
           blue: '#93ddfd',
           white: '#fff',
+        },
+        gray: {
+          850: '#282c35',
+          ...colors.coolGray,
         },
       },
       typography: (theme) => ({
