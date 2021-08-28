@@ -5,10 +5,8 @@ tags: ['docker']
 draft: false
 summary:  If you are looking for a list of useful docker commands that can make your development workflow easier, then this blog post might be just what you need! I hope these serve as a helpful guide to some Docker commands that will help you along the way.
 images: []
-layout: PostSimple
+layout: PostLayout
 ---
-
-# Docker commands for your daily workflow
 
 Docker is an open-source project that automates the deployment of applications inside software containers. It’s especially useful for DevOps engineers, programmers, and developers because it allows them to package their code into a standardized unit for software development. This post covers some useful docker commands you can use in your daily work, so if you are looking for some commands to help with your development workflow, this blog post might be just what you need!
 
