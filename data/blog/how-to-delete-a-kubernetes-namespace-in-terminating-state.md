@@ -1,6 +1,6 @@
 ---
 title: How to delete a Kubernetes namespace in Terminating state
-date: '2021-08-28'
+date: '2021-08-29'
 tags: ['kubernetes']
 draft: false
 summary: "Terminating state" is caused by resources still existing in the namespace that the namespace controller is unable to remove.
