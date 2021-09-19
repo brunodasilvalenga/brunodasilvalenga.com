@@ -70,11 +70,35 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             </dl>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-0 xl:col-span-3 xl:row-span-2">
               <div className="pt-10 pb-8 prose dark:prose-dark max-w-none">{children}</div>
-              <div className="pt-6 pb-6" >
+              <div className="pt-6 pb-6">
                 <div>
-                  <span className="text-md text-gray-900 font-bold">Did you enjoy this read?</span> Feel free to <Link href={siteMetadata.buymeacoffee} className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">{'buy me a coffee! :)'}</Link></div>
+                  <span className="text-md text-gray-900 font-bold">Did you enjoy this read?</span>
+                  Feel free to
+                  <Link
+                    href={siteMetadata.buymeacoffee}
+                    className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                  >
+                    {'buy me a coffee! :)'}
+                  </Link>
+                </div>
                 <div>
-                  <span className="text-md text-gray-900 font-bold">Contact me?</span> You can do that through <Link href={`mailto:${siteMetadata.email}`} className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">{'Email'}</Link> or <Link href={siteMetadata.linkedin} className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">{'Linkedin'}</Link>.</div>
+                  <span className="text-md text-gray-900 font-bold">Contact me?</span> You can do
+                  that through
+                  <Link
+                    href={`mailto:${siteMetadata.email}`}
+                    className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                  >
+                    {'Email'}
+                  </Link>
+                  or
+                  <Link
+                    href={siteMetadata.linkedin}
+                    className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                  >
+                    {'Linkedin'}
+                  </Link>
+                  .
+                </div>
               </div>
               <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
                 <Link href={editUrl(fileName)}>{'View on GitHub'}</Link>
