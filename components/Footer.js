@@ -13,6 +13,7 @@ export default function Footer() {
           <SocialIcon kind="devdotto" href={siteMetadata.devdotto} size="6" />
           <SocialIcon kind="medium" href={siteMetadata.medium} size="6" />
           <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size="6" />
+          <SocialIcon kind="buymeacoffee" href={siteMetadata.buymeacoffee} size="6" />
         </div>
         <div className="flex mb-2 space-x-2 text-sm text-gray-500 dark:text-gray-400">
           <div>{siteMetadata.author}</div>

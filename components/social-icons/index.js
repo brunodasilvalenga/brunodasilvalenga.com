@@ -5,6 +5,7 @@ import Linkedin from './linkedin.svg'
 import Instagram from './instagram.svg'
 import Medium from './medium.svg'
 import DevDotTo from './devdotto.svg'
+import BuyMeACoffee from './buymeacoffee.svg'
 
 // Icons taken from: https://simpleicons.org/
 
@@ -16,6 +17,7 @@ const components = {
   instagram: Instagram,
   medium: Medium,
   devdotto: DevDotTo,
+  buymeacoffee: BuyMeACoffee,
 }
 
 const SocialIcon = ({ kind, href, size = 8 }) => {

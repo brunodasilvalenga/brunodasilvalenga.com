@@ -16,6 +16,7 @@ const siteMetadata = {
   instagram: 'https://instagram.com/brunodasilvalenga',
   devdotto: 'https://dev.to/brunodasilvalenga',
   medium: 'https://medium.com/@brunodasilvalenga',
+  buymeacoffee: 'https://www.buymeacoffee.com/HXnzYZc',
   locale: 'en-US',
   comment: {
     provider: 'giscus', // supported providers: giscus
