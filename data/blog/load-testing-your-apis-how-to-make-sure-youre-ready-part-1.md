@@ -49,4 +49,4 @@ A soak test is a classic way of doing the majority of load testing for applicati
 ## Conclusion
 Load testing your APIs is a crucial step in the development process. It can help make sure that you are ready for any type of traffic, and even if there might be an issue with your system. Load testing involves simulating heavy traffic to see how well the API performs and to identify potential flaws in the design or implementation of the application. We have covered different ways to do this including 4 types of tests, like stress, spike, load, and soak tests.
 
->Stay tuned for the next chapter, where I'll show you some code and we'll do it together.
+[Load Testing Your API's - How to make sure you are Ready?! - [Part 2]]("https://www.brunodasilvalenga.com/blog/load-testing-your-apis-how-to-make-sure-youre-ready-part-2")
