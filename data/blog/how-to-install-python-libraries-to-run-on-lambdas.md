@@ -1,14 +1,11 @@
 ---
 title: "How to install Python Libraries to run on AWS Lambda functions"
 date: '2021-10-03'
-tags: ['serverless', 'python', 'docker', 'libs', 'lambda', 'aws' ]
+tags: ['serverless', 'python', 'docker', 'libs', 'lambda', 'aws']
 draft: false
-summary: 'A big problem when compiling Python libraries to use in our Lambda on AWS is using our computer (windows/macox/Linux) to assemble it. We starting to facing some issues because when you install a python package using pip, for example, Python knows that our machine has some libs that don't need to be recompiled because our machine will offer it to our library.'
+summary: "A big problem when compiling Python libraries to use in our Lambda on AWS is using our computer (windows/macox/Linux) to assemble it. We starting to facing some issues because when you install a python package using pip, for example, Python knows that our machine has some libs that don't need to be recompiled because our machine will offer it to our library."
 layout: PostLayout
-authors: ['default']
 ---
-
-# How to install Python Libraries to run on Lambda's
 
 A big problem when compiling Python libraries to use in our Lambda on AWS is using our computer (windows/macox/Linux) to assemble it. We starting to facing some issues because when you install a python package using pip, for example, Python knows that our machine has some libs that don't need to be recompiled because our machine will offer it to our library.
 
