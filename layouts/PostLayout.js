@@ -72,30 +72,30 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               <div className="pt-10 pb-8 prose dark:prose-dark max-w-none">{children}</div>
               <div className="pt-6 pb-6">
                 <div>
-                  <span className="text-md text-gray-900 font-bold">Did you enjoy this read?</span>
+                  <span className="text-md text-gray-900 font-bold">Did you enjoy this read?</span>{' '}
                   Feel free to
                   <Link
                     href={siteMetadata.buymeacoffee}
                     className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    {'buy me a coffee! :)'}
+                    {' buy me a coffee! :)'}
                   </Link>
                 </div>
                 <div>
-                  <span className="text-md text-gray-900 font-bold">Contact me?</span> You can do
+                  <span className="text-md text-gray-900 font-bold">Contact me? </span> You can do
                   that through
                   <Link
                     href={`mailto:${siteMetadata.email}`}
                     className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    {'Email'}
+                    {' Email '}
                   </Link>
                   or
                   <Link
                     href={siteMetadata.linkedin}
                     className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    {'Linkedin'}
+                    {' Linkedin'}
                   </Link>
                   .
                 </div>
