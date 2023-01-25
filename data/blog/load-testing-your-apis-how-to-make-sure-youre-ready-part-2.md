@@ -9,10 +9,10 @@ layout: PostLayout
 
 This article will talk about how to load test your APIs, and it is the second part of the article where I will bring more code and action. If you haven't checked the first part of it, please feel free to read it:
 
-[Load Testing Your API's - How to make sure you are Ready?! - [Part 1]]("https://www.brunodasilvalenga.com/blog/load-testing-your-apis-how-to-make-sure-youre-ready-part-1")
+[Load Testing Your API's - How to make sure you are Ready?! - [Part 1]](load-testing-your-apis-how-to-make-sure-youre-ready-part-1)
 
 
-From the [part 1]("https://www.brunodasilvalenga.com/blog/load-testing-your-apis-how-to-make-sure-youre-ready-part-1"), we identified that load testing your API means simulating heavy traffic coming into your API, and it can help you make sure that it can handle anything that is thrown at it. Also, we came up with 4 types of load testing.
+From the [part 1](load-testing-your-apis-how-to-make-sure-youre-ready-part-1), we identified that load testing your API means simulating heavy traffic coming into your API, and it can help you make sure that it can handle anything that is thrown at it. Also, we came up with 4 types of load testing.
 
 ## Types
 
