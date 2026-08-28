@@ -1,5 +1,25 @@
 import adapter from '@sveltejs/adapter-static';
-import { mdsvex } from 'mdsvex';
+import { mdsvex, escapeSvelte } from 'mdsvex';
+import { codeToHtml } from 'shiki';
+
+const highlighter = {
+	async highlighter(code, lang) {
+		if (lang === 'mermaid') {
+			return `<pre class="mermaid">${escapeSvelte(code)}</pre>`;
+		}
+
+		const language = lang && lang !== 'text' ? lang : 'text';
+		const html = await codeToHtml(code, {
+			lang: language,
+			themes: {
+				light: 'github-light',
+				dark: 'github-dark'
+			},
+			defaultColor: false
+		});
+		return `{@html \`${escapeSvelte(html)}\`}`;
+	}
+};
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -7,9 +27,7 @@ const config = {
 	preprocess: [
 		mdsvex({
 			extensions: ['.md'],
-			highlight: {
-				theme: 'github-dark'
-			}
+			highlight: highlighter
 		})
 	],
 	kit: {

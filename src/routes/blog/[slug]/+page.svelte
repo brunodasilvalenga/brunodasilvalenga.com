@@ -45,7 +45,7 @@
 		prose-headings:font-semibold
 		prose-a:text-zinc-800 dark:prose-a:text-zinc-200 prose-a:no-underline hover:prose-a:underline
 		prose-code:text-sm prose-code:bg-zinc-100 prose-code:dark:bg-zinc-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
-		prose-pre:bg-zinc-900 prose-pre:dark:bg-zinc-950 prose-pre:text-sm">
+		prose-code:before:content-none prose-code:after:content-none">
 		<data.component />
 	</div>
 </article>

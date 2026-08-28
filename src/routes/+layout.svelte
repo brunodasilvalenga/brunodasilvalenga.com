@@ -2,6 +2,7 @@
 	import '../app.css';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import Mermaid from '$lib/components/Mermaid.svelte';
 
 	let { children } = $props();
 </script>
@@ -13,3 +14,5 @@
 	</main>
 	<Footer />
 </div>
+
+<Mermaid />
