@@ -13,7 +13,11 @@
 		mermaid.initialize({
 			startOnLoad: false,
 			securityLevel: 'loose',
-			theme: document.documentElement.classList.contains('dark') ? 'dark' : 'default'
+			theme: document.documentElement.classList.contains('dark') ? 'dark' : 'default',
+			flowchart: {
+				htmlLabels: true,
+				curve: 'basis'
+			}
 		});
 		return mermaid;
 	}
@@ -30,8 +34,15 @@
 				try {
 					const { svg } = await m.render(id, source);
 					const wrapper = document.createElement('div');
-					wrapper.className = 'mermaid-diagram my-6 flex justify-center overflow-x-auto';
+					wrapper.className = 'mermaid-diagram my-6 overflow-x-auto';
 					wrapper.innerHTML = svg;
+					const svgEl = wrapper.querySelector('svg');
+					if (svgEl) {
+						svgEl.removeAttribute('style');
+						const vb = svgEl.viewBox.baseVal;
+						if (vb.width) svgEl.setAttribute('width', String(vb.width));
+						if (vb.height) svgEl.setAttribute('height', String(vb.height));
+					}
 					block.replaceWith(wrapper);
 				} catch (err) {
 					console.error('Mermaid render error:', err);

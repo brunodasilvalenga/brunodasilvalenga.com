@@ -21,7 +21,7 @@ At a high level, each environment promotion looks the same, with the blast radiu
 
 ```mermaid
 flowchart LR
-    A[Dev<br/>auto apply] --> B[Test<br/>auto apply] --> C[Staging<br/>gated apply] --> D[Production<br/>gated +<br/>binary-locked]
+    Dev[Dev] -- auto --> Test[Test] -- auto --> Staging[Staging] -- gated --> Prod[Production<br/>gated + binary-locked]
 ```
 
 Dev and test auto-apply on merge. That's the whole point of those environments: fast feedback, low blast radius. Staging adds a manual gate before apply. Production adds the same gate, but with one structural difference that turns out to matter a lot: *the thing being approved is the exact thing that gets applied*, not a fresh plan run after the approval.
@@ -35,17 +35,10 @@ That gap between the reviewed plan and the applied plan is where surprises live:
 The fix is what I've taken to calling the **plan-binary-across-gate** pattern: generate the plan once, save it as a binary artifact, gate on that specific artifact, and apply *that exact binary* instead of running a fresh one.
 
 ```mermaid
-flowchart LR
-    subgraph PlanJob["Plan job"]
-        P1["terraform plan<br/>-out=tfplan"]
-    end
-
-    subgraph ApplyJob["Apply job"]
-        A1["download same<br/>artifact (tfplan)"] --> A2{{"Manual approval"}}
-        A2 -->|approved| A3["terraform apply tfplan<br/>no re-plan"]
-    end
-
-    P1 -->|upload artifact| A1
+flowchart TD
+    P1["Plan job<br/>terraform plan -out=tfplan"] -->|upload artifact| A1["Apply job<br/>download tfplan"]
+    A1 --> A2{{"Manual approval"}}
+    A2 -->|approved| A3["terraform apply tfplan<br/>no re-plan"]
 ```
 
 ```yaml

@@ -58,3 +58,21 @@ html.dark .shiki span {
 .dark .prose pre.shiki {
 	border-color: #27272a;
 }
+
+/* Mermaid diagrams: keep their natural size so text stays legible, scroll horizontally if needed. */
+.mermaid-diagram {
+	padding: 1rem 0;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.mermaid-diagram > svg {
+	display: block;
+	margin: 0 auto;
+}
+
+.mermaid-diagram svg text,
+.mermaid-diagram svg .nodeLabel,
+.mermaid-diagram svg .edgeLabel {
+	font-family: var(--font-sans);
+}
