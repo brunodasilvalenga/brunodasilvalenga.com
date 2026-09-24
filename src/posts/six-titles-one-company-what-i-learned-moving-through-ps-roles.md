@@ -1,9 +1,9 @@
 ---
 title: 'Six titles, one company: what I learned moving through PS roles'
 date: '2026-08-28'
-description: 'Senior developer, DevOps engineer, cloud architect, head of technology, practice leader, principal consultant. Seven years at the same consultancy, and what each role broke that I thought I already knew.'
+summary: 'Senior developer, DevOps engineer, cloud architect, head of technology, practice leader, principal consultant. Seven years at the same consultancy, and what each role broke that I thought I already knew.'
 tags: ['career', 'consulting', 'aws', 'leadership']
-published: true
+draft: false
 ---
 
 Six titles since 2019, all at the same company. Senior developer, DevOps engineer, cloud architect, head of technology, modernisation practice leader, and now modernisation principal consultant.

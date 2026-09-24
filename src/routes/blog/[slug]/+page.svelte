@@ -48,4 +48,9 @@
 		prose-code:before:content-none prose-code:after:content-none">
 		<data.component />
 	</div>
+
+	<footer class="mt-12 pt-6 border-t border-zinc-200 dark:border-zinc-800 text-sm text-zinc-600 dark:text-zinc-400">
+		Any questions? Reach me on
+		<a href={siteMetadata.social.x} target="_blank" rel="noopener noreferrer" class="text-zinc-800 dark:text-zinc-200 hover:underline">X (@brunovalenga)</a>.
+	</footer>
 </article>

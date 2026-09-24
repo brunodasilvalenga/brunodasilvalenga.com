@@ -70,9 +70,11 @@
 		);
 	}
 
-	onMount(() => {
-		renderMermaidBlocks();
+	// Runs on first load and after every client-side navigation.
+	// Must be registered during component init, not inside onMount.
+	afterNavigate(() => renderMermaidBlocks());
 
+	onMount(() => {
 		const observer = new MutationObserver((mutations) => {
 			for (const mutation of mutations) {
 				if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
@@ -85,8 +87,6 @@
 			attributes: true,
 			attributeFilter: ['class']
 		});
-
-		afterNavigate(() => renderMermaidBlocks());
 
 		return () => observer.disconnect();
 	});
