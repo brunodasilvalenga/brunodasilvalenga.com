@@ -39,7 +39,7 @@ Getting it working with Home Assistant took more effort than I expected, mostly 
 
 | Item | Notes |
 |---|---|
-| ESP32-C6 dev board | [This one from AliExpress](https://www.aliexpress.com/item/1005007625276593.html). Buy at least the 8 MB flash version; I used 16 MB. The app is ~1.8 MB, so smaller variants leave little room to grow the app partition. |
+| ESP32-C6 dev board | [This one from AliExpress](https://s.click.aliexpress.com/e/_c3TPKa1T). Buy at least the 8 MB flash version; I used 16 MB. The app is ~1.8 MB, so smaller variants leave little room to grow the app partition. |
 | USB-C cable | Must carry data. The C6's built-in USB Serial/JTAG handles flashing *and* the CLI. |
 | Computer | I used macOS. Linux and Windows are the same with ESP-IDF. |
 | 2.4 GHz Wi-Fi | The border router's backbone link. Needs IPv6 link-local, which any normal router does. |
